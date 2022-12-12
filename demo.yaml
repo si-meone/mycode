@@ -1,0 +1,15 @@
+- name: create a folder and file inside it
+  hosts: bender, zoidberg, fry # list out all targets
+
+  tasks:
+
+    - name: create a folder
+      file: # module
+          path: mynewdir
+          state: directory
+
+    - name : create a file
+      copy: # module
+          dest: mynewdir/simonscoolfile.txt
+          content: "mission accomplished"
+
