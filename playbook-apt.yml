@@ -1,6 +1,6 @@
 ---
 - name: Playbook - Install figlet    # metadata
-  hosts: planetexpress:!farnsworth   # we want to take the planetexpress group and remove farnsworth
+  hosts: planetexpress   # we want to take the planetexpress group and remove farnsworth
   connection: ssh     # default is to use the connection plugin ssh.py
   gather_facts: yes   # default is yes
 
