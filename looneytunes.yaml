@@ -1,0 +1,24 @@
+---
+- name: looney tunes
+  hosts: looneytunes
+  gather_facts: yes
+
+  tasks:
+  - name: "Create directory"
+    become_user: root
+    become: true
+    file:
+      path: "/home/{{ ansible_user }}/challenge/"
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
+      mode: "0755"
+  
+  - get_url:
+      url: https://raw.githubusercontent.com/csfeeser/ansible_essentials/main/data/downloadme.txt
+      dest: challenge
+
+  - name: swap PLACEHOLDER for Chad
+    replace:
+      path: challenge/downloadme.txt
+      regexp: 'PLACEHOLDER'
+      replace: 'simon'

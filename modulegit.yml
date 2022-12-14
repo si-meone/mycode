@@ -10,4 +10,4 @@
     git:
         repo: https://github.com/si-meone/mycode.git  # this is the repo to be cloned
         dest: ~/mycode_git/            # clone to this location on the remote systems
-
+        force: yes
