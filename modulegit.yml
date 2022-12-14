@@ -1,0 +1,13 @@
+---
+- name: Learning how to use git
+  hosts: planetexpress
+  connection: ssh
+  gather_facts: false
+
+  tasks:
+
+  - name: "Create a git archive from a repository"
+    git:
+        repo: https://github.com/si-meone/mycode.git  # this is the repo to be cloned
+        dest: ~/mycode_git/            # clone to this location on the remote systems
+
