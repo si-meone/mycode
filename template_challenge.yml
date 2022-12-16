@@ -1,0 +1,15 @@
+---
+- name: Exploring the template module and jinja expressions
+  hosts: localhost
+  gather_facts: no   # runs the "setup" module on remote hosts
+
+  # these variables are used to build templates
+  vars_files:
+    - vars/challengevars.yml
+
+
+  tasks:
+    - name: fill network switch values
+      template:
+        src: templates/baseIOS.conf.j2    # name of the template on ansible controller
+        dest: "~/{{ switchname  }}.conf"              # name of the completed file to be placed 
